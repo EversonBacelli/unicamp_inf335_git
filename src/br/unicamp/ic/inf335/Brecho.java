@@ -17,19 +17,14 @@ public class Brecho {
 		produtos.add(new ProdutoBean("CD00005","Prod 5 ...", "Bla Bla Bla",9400.0,"Bla Bla Bla"));
 		produtos.add(new ProdutoBean("CD00006","Prod 6 ...", "Bla Bla Bla",1500.0,"Bla Bla Bla"));
 		
-		// Imprime produtos
-		for (int i=0; i<produtos.size(); i++) {
-			System.out.println("Codigo = " + produtos.get(i).getCodigo() + " Nome = " + produtos.get(i).getNome() + " Valor = " + produtos.get(i).getValor());
-		}
 		
+		printar(produtos);
 		// Ordena produtos
 		Collections.sort(produtos);
 		
 		System.out.println("-------------------- Produtos Ordenados -------------------");
 		// Imprime produtos ordenados
-		for (int i=0; i<produtos.size(); i++) {
-			System.out.println("Codigo = " + produtos.get(i).getCodigo() + " Nome = " + produtos.get(i).getNome() + " Valor = " + produtos.get(i).getValor());
-		}
+		printar(produtos);
 		
 		// Calcula Média
 		Double media = 0.0;
@@ -42,4 +37,9 @@ public class Brecho {
 		System.out.println("Media de Valores = " + media);
 	}
 
+	public static void printar(ArrayList<ProdutoBean> produtos) {
+		for (int i=0; i<produtos.size(); i++) {
+			System.out.println("Codigo = " + produtos.get(i).getCodigo() + " Nome = " + produtos.get(i).getNome() + " Valor = " + produtos.get(i).getValor());
+		}
+	}
 }
